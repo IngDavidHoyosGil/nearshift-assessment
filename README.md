@@ -66,6 +66,10 @@ Order items and payments remain separate facts because their different grains co
 
 The source timestamps are used as stored, without explicit timezone conversion. Canceled orders are excluded from commercial metrics, and the source data used here has no separate refund ledger. Further validation scope and known data-quality findings are in [`docs/validation.md`](docs/validation.md); the written analysis is in [`docs/insights.md`](docs/insights.md).
 
+## Future improvement
+
+The optional AI metric exposure from the original assignment was not implemented due to time constraints. A future iteration could add a small API endpoint or MCP-style tool that answers questions such as “What was revenue last month?” using only the curated DuckDB views. Any such interface should query modeled data only, define how “last month” is determined, and avoid generating figures that cannot be traced to the curated metrics.
+
 ## Tests
 
 Run the ingestion unit tests with:
